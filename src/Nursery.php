@@ -1,6 +1,8 @@
 <?php
 namespace TTConsulting\Example;
-use TTConsulting\Example\Animal\GenericAnimal;
+
+use TTConsulting\Example\Animal\AGenericAnimal;
+use TTConsulting\Example\Sort\AGenericSort;
 
 /**
  * Class Nursery
@@ -42,10 +44,10 @@ class Nursery {
 
     /**
      * Puts the animal in the nursery.
-     * @param GenericAnimal $animal
+     * @param AGenericAnimal $animal
      * @return bool
      */
-    public function put(GenericAnimal $animal) : bool {
+    public function put(AGenericAnimal $animal) : bool {
         if($this->count() < self::CAPACITY) {
             $this->_cage[] = $animal;
             $response = true;
@@ -56,25 +58,12 @@ class Nursery {
     }
 
     /**
-     * Shows all animals.
+     * Performs cage sorting.
+     * @param AGenericSort $sort
      * @return array
      */
-    public function animals() : array {
-        return $this->_cage;
-    }
-
-    /**
-     * Sorts animals by name.
-     */
-    public function sort()   {
-        for($i = 0; $i < $this->_cage; $i++) {
-
-        }
-        uasort($this->_cage,function($objA, $objB){
-            if($objA->nickname() < $objB->nickname()) return -1;
-            elseif($objA->nickname() > $objB->nickname()) return 1;
-            else return 0;
-        });
+    public function sort(AGenericSort $sort) : array {
+        return $sort->sort($this->_cage);
     }
 
     /**
