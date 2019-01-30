@@ -1,10 +1,8 @@
 <?php
 namespace TTConsulting\Example;
 
-/** Defines convenient links to objects **/
-use TTConsulting\Example\Animal\CatAnimal as Cat;
-use TTConsulting\Example\Animal\DogAnimal as Dog;
-use TTConsulting\Example\Animal\TurtleAnimal as Turtle;
+use TTConsulting\Example\Animal\AGenericAnimal as Animal;
+use TTConsulting\Example\Sort\AGenericSort as Sort;
 
 /** PHP configuration **/
 ini_set( 'error_reporting', E_ALL );
@@ -19,11 +17,14 @@ require_once __DIR__ . '/vendor/autoload.php';
 $nursery = Nursery::instance();
 
 /** Puts the animals in the nursery **/
-$nursery->put(new Cat('Машка', 3));
-$nursery->put(new Dog('Бобик', 6));
-$nursery->put(new Turtle('Лариса', 1));
+$nursery->put(Animal::create('CatAnimal', 'Васька', 3));
+$nursery->put(Animal::create('DogAnimal', 'Бобик', 6));
+$nursery->put(Animal::create('TurtleAnimal', 'Клариса', 1));
 
 /** Shows all animals in alphabetical order **/
-$nursery->animals();
+foreach($nursery->sort(Sort::type('StringSort')) as $animal) {
+    echo $animal->nickname() . PHP_EOL;
+}
+
 
 $visitor = new Person(3);

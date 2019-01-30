@@ -62,10 +62,10 @@ class Nursery {
      * @param AGenericSort $sort
      * @return array
      */
-    public function sort(string $sort, array $cage = []) : array {
+    public function sort(AGenericSort $sort, array $cage = []) : array {
         return !empty($cage)
-            ? AGenericSort::type($sort)->sort($cage)
-            : AGenericSort::type($sort)->sort($this->_cage);
+            ? $sort->sort($cage)
+            : $sort->sort($this->_cage);
     }
 
     /**
