@@ -1,0 +1,21 @@
+{
+  "name": "kvsystems/tt-consulting",
+  "description": "Test example from TT Consulting LTD",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Aleksandr Kalugin",
+      "email": "ak777-07@mail.ru"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Targem\\Example\\": "src/",
+      "TTConsulting\\Example\\Animals": "src/animals"
+    }
+  }
+}
