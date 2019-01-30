@@ -21,6 +21,12 @@ abstract class AGenericAnimal {
     private $_age;
 
     /**
+     * Date of entry.
+     * @var $_created int
+     */
+    private $_created;
+
+    /**
      * GenericAnimal constructor.
      * Assigns basic animal properties.
      * @param string $nick
@@ -29,6 +35,7 @@ abstract class AGenericAnimal {
     public function __construct(string $nick, int $age)   {
         $this->_nick = $nick;
         $this->_age  = $age;
+        $this->_created = time();
     }
 
     /**
@@ -57,6 +64,14 @@ abstract class AGenericAnimal {
      */
     public function age() : int  {
         return $this->_age;
+    }
+
+    /**
+     * Gets the entered time.
+     * @return int
+     */
+    public function entered() : int {
+        return $this->_created;
     }
 
     /**
