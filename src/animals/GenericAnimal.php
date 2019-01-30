@@ -32,6 +32,18 @@ abstract class GenericAnimal {
     }
 
     /**
+     * Gets new animal
+     * @param string $type
+     * @param string $nick
+     * @param int $age
+     * @return GenericAnimal
+     */
+    public static function create(string $type, string $nick, int $age) : GenericAnimal {
+        $type = __NAMESPACE__ . '\\' . $type;
+        return new $type($nick, $age);
+    }
+
+    /**
      * Gets the name of the animal.
      * @return string
      */
