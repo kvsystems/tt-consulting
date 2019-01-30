@@ -6,7 +6,7 @@ namespace TTConsulting\Example\Animal;
  * Base animal class.
  * @package TTConsulting\Example\Animal
  */
-abstract class GenericAnimal {
+abstract class AGenericAnimal {
 
     /**
      * Animal nickname.
@@ -38,7 +38,7 @@ abstract class GenericAnimal {
      * @param int $age
      * @return GenericAnimal
      */
-    public static function create(string $type, string $nick, int $age) : GenericAnimal {
+    public static function create(string $type, string $nick, int $age) : AGenericAnimal {
         $type = __NAMESPACE__ . '\\' . $type;
         return new $type($nick, $age);
     }

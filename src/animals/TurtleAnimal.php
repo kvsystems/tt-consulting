@@ -6,7 +6,7 @@ namespace TTConsulting\Example\Animal;
  * Implements a turtle.
  * @package TTConsulting\Example\Animal
  */
-class TurtleAnimal extends GenericAnimal {
+class TurtleAnimal extends AGenericAnimal {
 
     /**
      * Publishes turtle voice.

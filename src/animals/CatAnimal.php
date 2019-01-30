@@ -6,7 +6,7 @@ namespace TTConsulting\Example\Animal;
  * Implements a cat.
  * @package TTConsulting\Example\Animal
  */
-class CatAnimal extends GenericAnimal {
+class CatAnimal extends AGenericAnimal {
 
     /**
      * Publishes cat voice.

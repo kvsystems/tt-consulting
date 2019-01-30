@@ -6,7 +6,7 @@ namespace TTConsulting\Example\Animal;
  * Implements a dog.
  * @package TTConsulting\Example\Animal
  */
-class DogAnimal extends GenericAnimal {
+class DogAnimal extends AGenericAnimal {
 
     /**
      * Publishes dog voice.
