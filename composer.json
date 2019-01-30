@@ -15,7 +15,8 @@
   "autoload": {
     "psr-4": {
       "TTConsulting\\Example\\": "src/",
-      "TTConsulting\\Example\\Animal\\": "src/animals/"
+      "TTConsulting\\Example\\Animal\\": "src/animals/",
+      "TTConsulting\\Example\\Sort\\": "src/sort/"
     }
   }
 }
