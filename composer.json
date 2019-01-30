@@ -14,8 +14,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Targem\\Example\\": "src/",
-      "TTConsulting\\Example\\Animals": "src/animals"
+      "TTConsulting\\Example\\": "src/",
+      "TTConsulting\\Example\\Animals\\": "src/animals"
     }
   }
 }
