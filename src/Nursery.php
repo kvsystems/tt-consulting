@@ -34,7 +34,7 @@ class Nursery {
      * Receiving nursery instance.
      * @return Nursery
      */
-    public static function instance()   {
+    public static function instance() : Nursery {
         return self::$_instance === null
             ? self::$_instance = new static()
             : self::$_instance;
@@ -56,10 +56,32 @@ class Nursery {
     }
 
     /**
+     * Shows all animals.
+     * @return array
+     */
+    public function animals() : array {
+        return $this->_cage;
+    }
+
+    /**
+     * Sorts animals by name.
+     */
+    public function sort()   {
+        for($i = 0; $i < $this->_cage; $i++) {
+
+        }
+        uasort($this->_cage,function($objA, $objB){
+            if($objA->nickname() < $objB->nickname()) return -1;
+            elseif($objA->nickname() > $objB->nickname()) return 1;
+            else return 0;
+        });
+    }
+
+    /**
      * Counts animals in the nursery.
      * @return int
      */
-    public function count() {
+    public function count() : int {
         return count($this->_cage);
     }
 
