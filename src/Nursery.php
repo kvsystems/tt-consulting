@@ -89,7 +89,7 @@ class Nursery {
     public function unset(string $tag) : bool {
         $result = false;
         foreach($this->_cage as $key => $animal)   {
-            if($animal->tag == $tag) {
+            if($animal->tag() == $tag) {
                 unset($this->_cage[$key]);
                 array_values($this->_cage);
                 $result = true;
