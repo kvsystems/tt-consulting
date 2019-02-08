@@ -48,7 +48,7 @@ class Nursery {
      * @return bool
      */
     public function put(AGenericAnimal $animal) : bool {
-        if($this->count() < self::CAPACITY) {
+        if($this->count() <= self::CAPACITY) {
             $this->_cage[] = $animal;
             $response = true;
         } else {
