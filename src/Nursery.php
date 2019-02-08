@@ -59,11 +59,18 @@ class Nursery {
 
     /**
      * Performs cage sorting.
-     * @param AGenericSort $sort
+     * @param array $sorts
      * @return array
      */
-    public function sort(AGenericSort $sort) : array {
-        return $sort->sort($this->_cage);
+    public function animals(array $sorts = []) : array {
+        $room = [];
+        if(!empty($sorts)) {
+            foreach($sorts as $sort) {
+                $room = !empty($room)
+                    ? $sort->sort($room) : $sort->sort($this->_cage);
+            }
+        }
+        return $room;
     }
 
     /**
