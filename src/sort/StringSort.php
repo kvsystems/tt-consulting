@@ -18,7 +18,7 @@ class StringSort extends AGenericSort {
             elseif($objA->nickname() > $objB->nickname()) return 1;
             else return 0;
         });
-        return $cage;
+        return array_values($cage);
     }
 
 }
