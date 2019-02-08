@@ -13,7 +13,7 @@ class CatAnimal extends AGenericAnimal {
      * @return string
      */
     public function voice() : string {
-
+        return 'Мяу';
     }
 
 }

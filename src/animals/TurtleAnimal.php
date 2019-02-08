@@ -13,7 +13,7 @@ class TurtleAnimal extends AGenericAnimal {
      * @return string
      */
     public function voice() : string {
-
+        return 'Молчание - золото';
     }
 
 }

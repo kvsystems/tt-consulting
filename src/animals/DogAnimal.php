@@ -13,7 +13,7 @@ class DogAnimal extends AGenericAnimal {
      * @return string
      */
     public function voice() : string {
-
+        return 'Гав';
     }
 
 }
