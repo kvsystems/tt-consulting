@@ -9,6 +9,12 @@ namespace TTConsulting\Example\Animal;
 abstract class AGenericAnimal {
 
     /**
+     * Animal tag.
+     * @var $_tag int
+     */
+    private $_tag = 0;
+
+    /**
      * Animal nickname.
      * @var $_nick string
      */
@@ -33,8 +39,9 @@ abstract class AGenericAnimal {
      * @param int $age
      */
     public function __construct(string $nick, int $age)   {
-        $this->_nick = $nick;
-        $this->_age  = $age;
+        $this->_tag     = uniqid();
+        $this->_nick    = $nick;
+        $this->_age     = $age;
         $this->_created = time();
     }
 
@@ -72,6 +79,14 @@ abstract class AGenericAnimal {
      */
     public function entered() : int {
         return $this->_created;
+    }
+
+    /**
+     * Gets animal tag.
+     * @return int
+     */
+    public function tag() : int {
+        return $this->_tag;
     }
 
     /**
