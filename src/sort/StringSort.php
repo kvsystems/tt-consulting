@@ -7,6 +7,11 @@ namespace TTConsulting\Example\Sort;
  */
 class StringSort extends AGenericSort {
 
+    /**
+     * Sorts animals alphabetically
+     * @param array $cage
+     * @return array
+     */
     public function sort(array $cage) : array {
         uasort($cage,function($objA, $objB){
             if($objA->nickname() < $objB->nickname()) return -1;

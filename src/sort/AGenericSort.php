@@ -10,11 +10,12 @@ abstract class AGenericSort {
     /**
      * Creates sort type.
      * @param string $type
+     * @param array $params
      * @return AGenericSort
      */
-    public static function type(string $type) : AGenericSort {
+    public static function type(string $type, array $params = []) : AGenericSort {
         $type = __NAMESPACE__ . '\\' . $type;
-        return new $type();
+        return new $type($params);
     }
 
     /**
