@@ -15,13 +15,13 @@ class AnimalsTest extends TestCase {
 
     public function testDog()   {
         $this->assertInstanceOf(
-            CatAnimal::class, AGenericAnimal::create('DogAnimal', 'Василий', 3)
+            DogAnimal::class, AGenericAnimal::create('DogAnimal', 'Василий', 3)
         );
     }
 
     public function testTurtle()   {
         $this->assertInstanceOf(
-            CatAnimal::class, AGenericAnimal::create('TurtleAnimal', 'Василий', 3)
+            TurtleAnimal::class, AGenericAnimal::create('TurtleAnimal', 'Василий', 3)
         );
     }
 
@@ -52,7 +52,7 @@ class AnimalsTest extends TestCase {
 
     public function testEntered()  {
         $animal = AGenericAnimal::create('TurtleAnimal', 'Василий', 3);
-        $this->assertIsInt($animal->nickname());
+        $this->assertIsInt($animal->entered());
     }
 
     public function testTag()  {
