@@ -20,7 +20,7 @@ class TypeSort extends AGenericSort {
      */
     public function __construct(array $params = [])   {
         if(isset($params[0])) {
-            $this->_type = $params[0];
+            $this->_type = str_replace( 'Sort', 'Animal',__NAMESPACE__ . '\\' . $params[0]);
         }
     }
 
