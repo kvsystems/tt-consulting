@@ -7,13 +7,34 @@ namespace TTConsulting\Example\Sort;
  */
 class TypeSort extends AGenericSort {
 
+    /**
+     * Type of animal.
+     * @var $_type string
+     */
+    private $_type;
+
+    /**
+     * TypeSort constructor.
+     * Set animal type
+     * @param array $params
+     */
+    public function __construct(array $params = [])   {
+        if(isset($params[0])) {
+            $this->_type = $params[0];
+        }
+    }
+
+    /**
+     * Sorts animals by type.
+     * @param array $cage
+     * @return array
+     */
     public function sort(array $cage) : array {
-        uasort($cage,function($objA, $objB){
-            if($objA->nickname() < $objB->nickname()) return -1;
-            elseif($objA->nickname() > $objB->nickname()) return 1;
-            else return 0;
-        });
-        return $cage;
+        $result = [];
+        foreach($cage as $animal) {
+            if($animal instanceof $this->_type) $result[] = $animal;
+        }
+        return $result;
     }
 
 }
