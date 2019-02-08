@@ -19,7 +19,7 @@ abstract class AGenericSort {
     }
 
     /**
-     * 
+     * Animal sort function.
      * @param array $cage
      * @return array
      */
