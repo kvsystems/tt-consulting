@@ -22,7 +22,11 @@ $nursery->put(Animal::create('DogAnimal', 'Бобик', 6));
 $nursery->put(Animal::create('TurtleAnimal', 'Клариса', 1));
 
 /** Shows all animals in alphabetical order **/
-foreach($nursery->sort(Sort::type('StringSort')) as $animal) {
+$sorts = [
+    Sort::type('StringSort', []),
+    Sort::type('TypeSort',   ['CatAnimal'])
+];
+foreach($nursery->animals($sorts) as $animal) {
     echo $animal->nickname() . PHP_EOL;
 }
 
