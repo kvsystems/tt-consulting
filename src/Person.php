@@ -10,6 +10,12 @@ use TTConsulting\Example\Animal\GenericAnimal;
 class Person {
 
     /**
+     * Visitor name.
+     * @var $_name string
+     */
+    private $_name;
+
+    /**
      * Cage for animals.
      * @var $_cage array
      */
@@ -23,9 +29,12 @@ class Person {
 
     /**
      * Person constructor.
-     * Specifies the cell volume of a new person.
+     * Specifies the name and cell volume of a new person.
+     * @param $name
+     * @param int $volume
      */
-    public function __construct(int $volume = 1)   {
+    public function __construct($name, int $volume = 1)   {
+        $this->_name = $name;
         $this->_volume = $volume;
     }
 
@@ -42,6 +51,14 @@ class Person {
             $response = false;
         }
         return $response;
+    }
+
+    /**
+     * Gets a visitor name.
+     * @return string
+     */
+    public function name()  {
+        return $this->_name;
     }
 
     /**
