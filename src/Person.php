@@ -1,7 +1,7 @@
 <?php
 namespace TTConsulting\Example;
 
-use TTConsulting\Example\Animal\GenericAnimal;
+use TTConsulting\Example\Animal\AGenericAnimal;
 
 /**
  * Class Person.
@@ -40,10 +40,10 @@ class Person {
 
     /**
      * Starts the animal in a cage.
-     * @param GenericAnimal $animal
+     * @param AGenericAnimal $animal
      * @return bool
      */
-    public function take(GenericAnimal $animal) : bool  {
+    public function take(AGenericAnimal $animal) : bool  {
         if($this->count() < $this->_volume) {
             $this->_cage[] = $animal;
             $response = true;
