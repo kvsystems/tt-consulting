@@ -34,7 +34,7 @@ class TypeSort extends AGenericSort {
         foreach($cage as $animal) {
             if($animal instanceof $this->_type) $result[] = $animal;
         }
-        return array_values($cage);
+        return array_values($result);
     }
 
 }
