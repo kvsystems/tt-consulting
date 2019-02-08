@@ -12,7 +12,7 @@ abstract class AGenericSort {
      * @param string $type
      * @return AGenericSort
      */
-    public static function type(array $type) : AGenericSort {
+    public static function type(string $type) : AGenericSort {
         $type = __NAMESPACE__ . '\\' . $type;
         return new $type();
     }
