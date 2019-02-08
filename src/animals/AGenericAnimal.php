@@ -12,7 +12,7 @@ abstract class AGenericAnimal {
      * Animal tag.
      * @var $_tag int
      */
-    private $_tag = 0;
+    private $_tag;
 
     /**
      * Animal nickname.
@@ -83,9 +83,9 @@ abstract class AGenericAnimal {
 
     /**
      * Gets animal tag.
-     * @return int
+     * @return string
      */
-    public function tag() : int {
+    public function tag() : string {
         return $this->_tag;
     }
 
